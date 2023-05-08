@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../library/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+    <div class="header">  
+        <div class="title">
+            <i class="fa-regular fa-book"></i>
+            <h2>ToDo App</h2>
+            <i class="fa-regular fa-book"></i>
+        </div>
+        <div class="name-of-list-task">
+            <input class="c-checkbox" type="checkbox" id="checkbox">
+            <div class="c-formContainer">
+                <form class="c-form" action="">
+                    <input oninput="checkInputList(event)" class="c-form__input" placeholder="Name List (max 25 chars)" type="text"
+                        maxlength="25" required>
+                    <label onclick="recoverInputList(event); newList(); editDataPage();" class="c-form__buttonLabel" for="checkbox" aria-disabled="true">
+                        <button class="c-form__button" type="submit">Create</button>
+                    </label>
+                    <label onclick="checkInputList(event)" class="c-form__toggle" for="checkbox" data-title="New"></label>
+                </form>
+            </div>
+        </div>
+        <div class="name-list">
+            <a class="border-animation">
+                <span class="border-animation__inner" aria-placeholder="true"></span>
+            </a>
+            <!-- ----------------- -->
+            <div class="dropdown">
+                <button class="btn btn-new-color dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="true" oncontextmenu="toggleDropdown(event)">
+                    <i class="fa-solid fa-pen"></i>    
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id = "display-name-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="body">
+        <div class="button-management-task">
+            <button id = "1" onclick="changeAction(event)">Active</button>
+            <button id = "2" onclick="changeAction(event)">Completed</button>
+            <button class = "choose" id = "3" onclick="changeAction(event)">All</button>
+        </div> 
+        <div class="display-todo">
+            <ul id = "list-todo">
+                <li id = "new-task" onclick="newTask()">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </li> 
+            </ul>
+        </div>
+    </div>
+
+    <div class="notification">
+        <div id="new-notification"></div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../library/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="javascript.js"></script>
+      
+
+</body>
+</html>
